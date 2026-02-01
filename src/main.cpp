@@ -1,33 +1,31 @@
 #include <Arduino.h>
+#include "../include/Button.hpp"
 
-// --- DEFINICIONES DE HARDWARE (C++20 Style) ---
-// Usamos constexpr para constantes en tiempo de compilación.
-constexpr int PIN_BOTON = 18;  // Tu Entrada (GPIO 18)
-constexpr int PIN_LED   = 23;  // Tu Salida (GPIO 23)
+constexpr int PIN_LED = 23; // Tu Salida (GPIO 23)
+bool ledState = false;
 
-void setup() {
+Button btn = Button(18);
+
+void setup()
+{
     // 1. Arrancar el puerto serie para ver los "ojos" del sistema
     Serial.begin(115200);
-    
+    digitalWrite(PIN_LED, LOW);
     // 2. Configurar Pines
-    // IMPORTANTE: Usamos 'INPUT' normal porque tú ya pusiste 
+    // IMPORTANTE: Usamos 'INPUT' normal porque tú ya pusiste
     // la resistencia y el condensador en la protoboard.
-    pinMode(PIN_BOTON, INPUT);
+    btn.begin();
     pinMode(PIN_LED, OUTPUT);
-
     Serial.println("--- INICIO TEST DE HARDWARE ---");
     Serial.println("Si pulsas, el LED debe encenderse.");
 }
 
-void loop() {
-    // LEER EL MUNDO FÍSICO
-    int estado = digitalRead(PIN_BOTON);
-
-    // ACTUAR (Reflejo directo)
-    digitalWrite(PIN_LED, estado);
-
-    // REPORTAR (Solo si hay actividad para no saturar la pantalla)
-    if (estado == HIGH) {
+void loop()
+{
+    bool state = btn.isDown();
+    digitalWrite(PIN_LED, state);
+    if (state)
+    {
         Serial.println("[OK] Botón Pulsado -> Energía detectada (3.3V)");
         delay(50); // Pequeña pausa para estabilidad visual del log
     }

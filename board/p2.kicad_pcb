@@ -168,7 +168,6 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/f5421db2-77ac-4838-b1d1-81e7105b678f")
 		(sheetname "/")
 		(sheetfile "p2.kicad_sch")
 		(attr through_hole)
@@ -550,7 +549,7 @@
 		(property "Reference" "SW1"
 			(at 3.25 -2 90)
 			(layer "F.SilkS")
-			(uuid "822f08e3-4ab2-49ad-ba75-d4f29bdac412")
+			(uuid "f4eaef30-2bda-480a-b15a-4bb741978262")
 			(effects
 				(font
 					(size 1 1)
@@ -561,7 +560,7 @@
 		(property "Value" "SW_Push"
 			(at 9.75 3.25 0)
 			(layer "F.Fab")
-			(uuid "f966595d-a57a-4cf0-afc7-102a6a25a0fb")
+			(uuid "8714ef00-1c87-49d2-9aad-6e5053454180")
 			(effects
 				(font
 					(size 1 1)
@@ -574,7 +573,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b24f4f0d-1772-4a48-85ad-e910fb8f73f6")
+			(uuid "1e99021b-de68-4145-a251-6962bc0e3f6d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -587,7 +586,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7e263a83-b97f-45ef-81a0-eab4dacb49bf")
+			(uuid "03b31027-ad5b-4e9a-9eed-c838e6c59065")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2285,7 +2284,6 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/2e4dffdd-50f0-44a9-b852-1a6772e15cff")
 		(sheetname "/")
 		(sheetfile "p2.kicad_sch")
 		(attr through_hole)
